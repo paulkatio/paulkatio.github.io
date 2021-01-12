@@ -1,0 +1,57 @@
+body {
+  background-color: pink;
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka,
+    メイリオ, Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", "ＭＳ ゴシック",
+    "MS Gothic", "Noto Sans CJK JP", TakaoPGothic, sans-serif;
+  overflow: hidden;
+  text-align: center;
+  letter-spacing: 15px;
+  font-size: 80px;
+  text-transform: uppercase;
+}
+
+h1 {
+  display: none;
+}
+
+
+img {
+  mix-blend-mode: color-burn;
+  height: 120vh;
+  width: 120vw;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+
+ul {
+  list-style: none;
+  z-index: 9999;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+li {
+  margin-bottom: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  opacity: 0.3;
+}
+
+a:hover {
+  curor: pointer;
+  opacity: 1;
+}
+
+a:visited {
+  color: #fff;
+}
