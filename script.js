@@ -5,9 +5,9 @@ var NUM_PARTICLES = ( ( ROWS = 100 ) * ( COLS = 300 ) ),
     COLOR = 220,
     DRAG = 0.95,
     EASE = 0.25,
-    
+
     /*
-    
+
     used for sine approximation, but Math.sin in Chrome is still fast enough :)http://jsperf.com/math-sin-vs-sine-approximation
 
     B = 4 / Math.PI,
@@ -46,25 +46,25 @@ function init() {
 
   container = document.getElementById( 'container' );
   canvas = document.createElement( 'canvas' );
-  
+
   ctx = canvas.getContext( '2d' );
   man = false;
   tog = true;
-  
+
   list = [];
-  
+
   w = canvas.width = COLS * SPACING + MARGIN * 2;
   h = canvas.height = ROWS * SPACING + MARGIN * 2;
-  
+
   container.style.marginLeft = Math.round( w * -0.5 ) + 'px';
   container.style.marginTop = Math.round( h * -0.5 ) + 'px';
-  
+
   for ( i = 0; i < NUM_PARTICLES; i++ ) {
-    
+
     p = Object.create( particle );
     p.x = p.ox = MARGIN + SPACING * ( i % COLS );
     p.y = p.oy = MARGIN + SPACING * Math.floor( i / COLS );
-    
+
     list[i] = p;
   }
 
@@ -74,13 +74,13 @@ function init() {
     mx = e.clientX - bounds.left;
     my = e.clientY - bounds.top;
     man = true;
-    
+
   });
-  
+
   if ( typeof Stats === 'function' ) {
     document.body.appendChild( ( stats = new Stats() ).domElement );
   }
-  
+
   container.appendChild( canvas );
 }
 
@@ -96,11 +96,11 @@ function step() {
       mx = w * 0.5 + ( Math.cos( t * 2.1 ) * Math.cos( t * 0.9 ) * w * 0.45 );
       my = h * 0.5 + ( Math.sin( t * 3.2 ) * Math.tan( Math.sin( t * 0.8 ) ) * h * 0.45 );
     }
-      
+
     for ( i = 0; i < NUM_PARTICLES; i++ ) {
-      
+
       p = list[i];
-      
+
       d = ( dx = mx - p.x ) * dx + ( dy = my - p.y ) * dy;
       f = -THICKNESS / d;
 
